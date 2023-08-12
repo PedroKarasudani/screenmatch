@@ -34,7 +34,6 @@ public class FilmeController {
         Filme filme = new Filme(dados);
         filmes.add(filme);
 
-        model.addAttribute("lista", filmes);
-        return "filmes/listagem";
+        return "redirect:/filmes";
     }
 }
