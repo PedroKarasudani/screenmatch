@@ -30,7 +30,7 @@ public class FilmeController {
     }
 
     @PostMapping
-    public String cadastraFilme(DadosCadastroFilme dados, Model model){
+    public String cadastraFilme(DadosCadastroFilme dados){
         Filme filme = new Filme(dados);
         filmes.add(filme);
 
