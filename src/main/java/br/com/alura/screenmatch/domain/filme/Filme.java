@@ -1,7 +1,17 @@
 package br.com.alura.screenmatch.domain.filme;
 
-public class Filme {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "filmes")
+public class Filme {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nome;
     private Integer duracaoEmMinutos;
     private Integer anoLancamento;
@@ -15,7 +25,7 @@ public class Filme {
         this.anoLancamento = dados.ano();
         this.genero = dados.genero();
     }
-
+    
     public String getNome() {
         return nome;
     }
@@ -29,12 +39,16 @@ public class Filme {
         return genero;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Filme [nome=" + nome + ", duracaoEmMinutos=" + duracaoEmMinutos + ", anoLancamento=" + anoLancamento
                 + ", genero=" + genero + "]";
     }
-    
+
 
     
 }
