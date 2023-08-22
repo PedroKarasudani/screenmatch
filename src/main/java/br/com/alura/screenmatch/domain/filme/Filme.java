@@ -25,6 +25,8 @@ public class Filme {
         this.anoLancamento = dados.ano();
         this.genero = dados.genero();
     }
+
+    public Filme(){} //exigencia da JPA
     
     public String getNome() {
         return nome;
