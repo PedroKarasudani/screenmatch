@@ -39,8 +39,8 @@ public class FilmeController {
     }
  
     @DeleteMapping
-    public String removeFilme(){
-        System.out.println("excluido");
+    public String removeFilme(Long id){
+        repository.deleteById(id);
         return "redirect:/filmes";
     }
 }
